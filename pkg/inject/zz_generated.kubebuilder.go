@@ -53,7 +53,7 @@ func init() {
 	Injector.CRDs = append(Injector.CRDs, &torv1alpha1.OnionServiceCRD)
 	// Inject PolicyRules
 	Injector.PolicyRules = append(Injector.PolicyRules, rbacv1.PolicyRule{
-		APIGroups: []string{"tor.k8s.io"},
+		APIGroups: []string{"tor.kragniz.eu"},
 		Resources: []string{"*"},
 		Verbs:     []string{"*"},
 	})
@@ -147,7 +147,7 @@ func init() {
 	})
 	// Inject GroupVersions
 	Injector.GroupVersions = append(Injector.GroupVersions, schema.GroupVersion{
-		Group:   "tor.k8s.io",
+		Group:   "tor.kragniz.eu",
 		Version: "v1alpha1",
 	})
 	Injector.RunFns = append(Injector.RunFns, func(arguments run.RunArguments) error {

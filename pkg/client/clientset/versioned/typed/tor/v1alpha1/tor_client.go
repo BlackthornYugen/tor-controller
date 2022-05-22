@@ -14,7 +14,7 @@ type TorV1alpha1Interface interface {
 	OnionServicesGetter
 }
 
-// TorV1alpha1Client is used to interact with features provided by the tor.k8s.io group.
+// TorV1alpha1Client is used to interact with features provided by the tor.kragniz.eu group.
 type TorV1alpha1Client struct {
 	restClient rest.Interface
 }
