@@ -18,9 +18,9 @@ type FakeOnionServices struct {
 	ns   string
 }
 
-var onionservicesResource = schema.GroupVersionResource{Group: "tor.k8s.io", Version: "v1alpha1", Resource: "onionservices"}
+var onionservicesResource = schema.GroupVersionResource{Group: "tor.kragniz.eu", Version: "v1alpha1", Resource: "onionservices"}
 
-var onionservicesKind = schema.GroupVersionKind{Group: "tor.k8s.io", Version: "v1alpha1", Kind: "OnionService"}
+var onionservicesKind = schema.GroupVersionKind{Group: "tor.kragniz.eu", Version: "v1alpha1", Kind: "OnionService"}
 
 // Get takes name of the onionService, and returns the corresponding onionService object, and an error if there is any.
 func (c *FakeOnionServices) Get(name string, options v1.GetOptions) (result *v1alpha1.OnionService, err error) {

@@ -36,7 +36,7 @@ func (f *genericInformer) Lister() cache.GenericLister {
 // TODO extend this to unknown resources with a client pool
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
 	switch resource {
-	// Group=tor.k8s.io, Version=v1alpha1
+	// Group=tor.kragniz.eu, Version=v1alpha1
 	case v1alpha1.SchemeGroupVersion.WithResource("onionservices"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Tor().V1alpha1().OnionServices().Informer()}, nil
 

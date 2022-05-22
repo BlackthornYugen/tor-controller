@@ -8,7 +8,7 @@ import (
 )
 
 // SchemeGroupVersion is group version used to register these objects
-var SchemeGroupVersion = schema.GroupVersion{Group: "tor.k8s.io", Version: "v1alpha1"}
+var SchemeGroupVersion = schema.GroupVersion{Group: "tor.kragniz.eu", Version: "v1alpha1"}
 
 // Kind takes an unqualified kind and returns back a Group qualified GroupKind
 func Kind(kind string) schema.GroupKind {
@@ -56,10 +56,10 @@ var (
 	// Define CRDs for resources
 	OnionServiceCRD = v1beta1.CustomResourceDefinition{
 		ObjectMeta: metav1.ObjectMeta{
-			Name: "onionservices.tor.k8s.io",
+			Name: "onionservices.tor.kragniz.eu",
 		},
 		Spec: v1beta1.CustomResourceDefinitionSpec{
-			Group:   "tor.k8s.io",
+			Group:   "tor.kragniz.eu",
 			Version: "v1alpha1",
 			Names: v1beta1.CustomResourceDefinitionNames{
 				Kind:   "OnionService",

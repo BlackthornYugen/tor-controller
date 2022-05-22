@@ -45,7 +45,7 @@ Quickstart with random address
 Create an onion service, `onionservice.yaml`:
 
 ```yaml
-apiVersion: tor.k8s.io/v1alpha1
+apiVersion: tor.kragniz.eu/v1alpha1
 kind: OnionService
 metadata:
   name: basic-onion-service
@@ -113,7 +113,7 @@ Put your private key into a secret:
 Create an onion service, `onionservice.yaml`, referencing the private key we just created:
 
 ```yaml
-apiVersion: tor.k8s.io/v1alpha1
+apiVersion: tor.kragniz.eu/v1alpha1
 kind: OnionService
 metadata:
   name: example-onion-service
@@ -178,7 +178,7 @@ To do this, first install nginx-ingress normally. Then point an onion service
 at the nginx-ingress-controller, for example:
 
 ```yaml
-apiVersion: tor.k8s.io/v1alpha1
+apiVersion: tor.kragniz.eu/v1alpha1
 kind: OnionService
 metadata:
   name: nginx-onion-service
