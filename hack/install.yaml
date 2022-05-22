@@ -256,8 +256,11 @@ spec:
         - --install-crds=false
         command:
         - /root/controller-manager
-        image: quay.io/kragniz/tor-controller-manager:master
+        image: ghcr.io/blackthornyugen/tor-controller-manager:pr-1
         name: controller-manager
+        env:
+        - name: DAEMON_MANAGER_IMAGE
+          value: "ghcr.io/blackthornyugen/tor-daemon-manager:pr-1"
         resources:
           limits:
             cpu: 100m

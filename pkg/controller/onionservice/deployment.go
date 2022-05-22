@@ -2,6 +2,7 @@ package onionservice
 
 import (
 	"fmt"
+	"os"
 
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
@@ -71,6 +72,13 @@ func deploymentEqual(a, b *appsv1.Deployment) bool {
 	return false
 }
 
+func getEnvOrDefault(key, fallback string) string {
+	if value, ok := os.LookupEnv(key); ok {
+		return value
+	}
+	return fallback
+}
+
 func torDeployment(onion *torv1alpha1.OnionService) *appsv1.Deployment {
 	labels := map[string]string{
 		"app":        "tor",
@@ -132,7 +140,7 @@ func torDeployment(onion *torv1alpha1.OnionService) *appsv1.Deployment {
 					Containers: []corev1.Container{
 						{
 							Name:  "tor",
-							Image: "quay.io/kragniz/tor-daemon-manager:master",
+							Image: getEnvOrDefault("DAEMON_MANAGER_IMAGE", "quay.io/kragniz/tor-daemon-manager:master"),
 							Args: []string{
 								"-name",
 								onion.Name,
