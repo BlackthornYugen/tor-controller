@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: Set image name lowercase
         run: |
-          echo "IMAGE_NAME=${{ github.repository_owner }}/${{ matrix.image }}" | tr '[:upper:]' '[:lower:]' | tee /dev/stderr >>${GITHUB_ENV}
+          echo "${{ github.repository_owner }}/${{ matrix.image }}" | sed -e 's/\(.*\)/IMAGE_NAME=\L\1/' | tee /dev/stderr >>${GITHUB_ENV}
       - name: Checkout repository
         uses: actions/checkout@v2
 
